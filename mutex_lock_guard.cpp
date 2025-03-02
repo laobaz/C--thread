@@ -36,9 +36,11 @@ void func2(int n)
          
 
         std::unique_lock<std::timed_mutex> lock(tmtx,std::defer_lock);
-        //可以手动加锁和解锁
-        //支持swap
+        //unique_lock会在{ }内部加锁，出了{ }自动解锁
+        //defer_lock不会在构造函数中加锁
         
+        //支持swap
+
         //lock.lock();
        
         lock.try_lock();//尝试加锁

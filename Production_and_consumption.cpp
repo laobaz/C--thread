@@ -49,7 +49,9 @@ int main()
 {
     std::thread t1(Producer);
     std::thread t2(Consumer);
+    std::thread t3(Consumer);
     t1.join();
     t2.join();
+    t3.join();
     return 0;
 }
